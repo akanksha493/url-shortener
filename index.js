@@ -34,4 +34,7 @@ app.get("/:shortUrl", async (req,res)=>{
     res.redirect(url.fullUrl);
 })
 
-app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 5000, "0.0.0.0", function(error){
+  if(error) console.log("error: ", error);
+  else console.log("server started");
+});
